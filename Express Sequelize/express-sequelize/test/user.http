@@ -1,0 +1,23 @@
+@URL = http://localhost:3000/users
+
+
+###Criar user
+POST {{URL}}
+Content-Type: application/json
+
+{
+    "name": "Teste1",
+    "email": "teste1@exe.com",
+    "login": "teste1",
+    "password": "1234"
+}
+
+
+###Buscar t'odos os users
+GET {{URL}}
+
+
+###Buscar um user
+GET {{URL}}/1
+Content-Type: application/json
+
