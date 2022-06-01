@@ -1,0 +1,22 @@
+<h1>Usuário</h1>
+
+<div class="container">
+
+    <form class="d-grid gap-2" [formGroup]="form">
+        <label>Nome</label>
+        <input type="text" class="form-control" formControlName="firstName">
+        <div *ngIf="form.controls['firstName'].hasError('required')">Campo obrigatório</div>
+
+        <label>Sobrenome</label>
+        <input type="text" class="form-control" formControlName="lastName">
+        <div *ngIf="form.controls['lastName'].hasError('required')">Campo obrigatório</div>
+
+        <label>Email</label>
+        <input type="text" class="form-control" formControlName="email">
+        <div *ngIf="form.controls['email'].hasError('required')">Campo obrigatório</div>
+        <div *ngIf="form.controls['email'].hasError('email')">Formato de e-mail inválido</div>
+
+        <button class="btn btn-primary" (click)="save()" 
+            [disabled]="form.status == 'INVALID'" >Salvar</button>
+    </form>
+</div>
